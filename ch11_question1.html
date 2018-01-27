@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chapter 11: Question 1</title>
+  </head>
+
+  <body>
+    <form action="" name="form1">
+      <p>
+        <label for="degreeFahrenheit">Please enter the degrees Fahrenheit: </label>
+        <input type="text" name="textCalcBox" value="0.0" />
+      </p>
+      <input type="button" value="Convert to centigrade" id="btnToCent" name="btnToCent" />
+    </form>
+
+    <script>
+      function converToCentigrade(degFahren) {
+        var degCent = 5/9 * (degFahren - 32)
+        return degCent
+      }
+
+      function btnToCentClick() {
+        var calcBox = document.form1.textCalcBox
+
+        if (isNaN(calcBox.value) == true || calcBox.value == "") {
+          alert("Please enter a valid Fahrenheit degree")
+        } else {
+          calcBox.value = converToCentigrade(calcBox.value)
+        }
+      }
+
+      document.getElementById("btnToCent").addEventListener("click", btnToCentClick)
+    </script>
+  </body>
+</html>
